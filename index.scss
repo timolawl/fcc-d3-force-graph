@@ -1,0 +1,114 @@
+$primary-color: #ea2e49;
+$secondary-color: #77c4d3;
+$border-color: gray;
+
+@import url('//fonts.googleapis.com/css?family=Open+Sans');
+
+*, :before, :after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Open Sans';
+  user-select: none; 
+  overflow: hidden;
+}
+
+body {
+  background: linear-gradient(45deg, $primary-color, $secondary-color);
+  //background: #f2f2f2;
+}
+
+svg {
+  display: block;
+}
+
+.chart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+svg {
+  background: white;
+  border: 4px solid $border-color;
+  cursor: default;
+}
+
+.link {
+  fill: $border-color;
+  stroke: $border-color;
+  stroke-width: 1px;
+}
+
+.circle {
+  cursor: grab;
+  &--grabbing {
+    cursor: grabbing;
+  }
+//  opacity: 0.9;
+}
+
+.node {
+  stroke: $border-color;
+  stroke-width: 2px;
+  &--author {
+    fill: $primary-color;
+  }
+  
+  &--link {
+    fill: $secondary-color;
+  }
+  
+  
+}
+
+.image {
+  border: 1px solid white;
+}
+
+.title {
+  font-size: 3vw;
+  font-weight: bold;
+  fill: $border-color;
+}
+
+.legend {
+  
+  
+  &--text {
+    font-size: 14px;
+    font-weight: bold;
+    fill: $border-color;
+  }
+  &--color {
+    stroke: $border-color;
+    stroke-width: 2px;
+  }
+  &--author-color {
+    fill: $primary-color;
+  }
+  &--domain-color {
+    fill: $secondary-color;
+  }
+}
+
+.tooltip {
+  position: absolute;
+  border-radius: 5px;
+  box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.2);
+  padding: 4px;
+  background: rgba(0,0,0, 0.8);
+  font-weight: bold;
+  pointer-events: none;
+  text-align: center;
+}
+
+.active {
+  &--author {
+    background: $primary-color;
+  }
+  &--link {
+    background: $secondary-color;
+  }
+}
