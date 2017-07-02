@@ -9,7 +9,9 @@
 // User Story: I can tell approximately how many times a specific camper has posted a link from their node's size.
 
 var Chart = (function(window, d3) {
-  var url = 'https://www.freecodecamp.com/news/hot';
+  // Camper News API discontinued. Therefore using last snapshot of Camper News.
+  // var url = 'https://www.freecodecamp.com/news/hot';
+  var url = 'https://cdn.rawgit.com/timolawl/fcc-d3-force-graph/f827ddfe/hot_stories.json';
   var index = 0, data, force, svg, chartWrapper, title, div, hoverTitle, hoverPosts, links, nodes, image, legend, author, domain, link, circle, drag, node, margin, height, width;
   
   d3.json(url, init);
